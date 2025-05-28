@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import CipsPayment
 
 class ConnectIpsPaymentSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
     class Meta:
         model = CipsPayment
         fields = '__all__'
