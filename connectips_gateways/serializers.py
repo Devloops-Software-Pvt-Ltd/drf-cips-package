@@ -4,6 +4,7 @@ from .models import CipsPayment
 
 class ConnectIpsPaymentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
+    creditor_pfx_file = serializers.FileField()
     class Meta:
         model = CipsPayment
         fields = '__all__'
