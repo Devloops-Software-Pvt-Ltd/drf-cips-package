@@ -63,6 +63,7 @@ class ConnectIpsPaymentViewSet(viewsets.ModelViewSet):
 
             # Save file path to the instance
             instance.creditor_pfx_file = file_path
+            print(file_path)
             instance.save()
 
             return Response(
