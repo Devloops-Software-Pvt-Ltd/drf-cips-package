@@ -37,7 +37,7 @@ class ConnectIpsPaymentViewSet(viewsets.ModelViewSet):
             )
 
         # Validate PFX file
-        file = request.FILES.get("file")
+        file = request.FILES.get("creditor_pfx_file")
         if not file:
             return Response({"error": "No file uploaded"}, status=400)
 
@@ -80,7 +80,7 @@ class ConnectIpsPaymentViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(payment, data=request.data)
         if serializer.is_valid():
-            file = request.FILES.get("file")
+            file = request.FILES.get("creditor_pfx_file")
 
             # If file is provided, validate and store it
             if file:
@@ -115,7 +115,7 @@ class ConnectIpsPaymentViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(payment, data=request.data, partial=True)
         if serializer.is_valid():
-            file = request.FILES.get("file")
+            file = request.FILES.get("creditor_pfx_file")
 
             # If file is provided, validate and store it
             if file:
